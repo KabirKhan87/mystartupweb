@@ -18,13 +18,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -58,7 +58,7 @@
         <div class="container-fluid bg-primary">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="{{ url_for('index') }}" class="navbar-brand">
                         <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
                     </a>
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -66,11 +66,11 @@
                     </button>
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="blog.html" class="nav-item nav-link">Blog Posts</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url_for('index') }}" class="nav-item nav-link active text-secondary">Home</a>
+                            <a href="{{ url_for('about') }}" class="nav-item nav-link">About</a>
+                            <a href="{{ url_for('service') }}" class="nav-item nav-link">Services</a>
+                            <a href="{{ url_for('blog') }}" class="nav-item nav-link">Blog Posts</a>
+                            <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
                     <div class="d-none d-xl-flex flex-shirink-0">
@@ -104,7 +104,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="img/carousel-1.jpg" class="img-fluid" alt="First slide">
+                        <img src="{{ url_for('static', filename='img/carousel-1.jpg') }}" class="img-fluid" alt="First slide">
                         <div class="carousel-caption">
                             <div class="container carousel-content">
                                 <h6 class="text-secondary h4 animated fadeInUp">Best IT Solutions</h6>
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="img/carousel-2.jpg" class="img-fluid" alt="Second slide">
+                        <img src="{{ url_for('static', filename='img/carousel-2.jpg') }}" class="img-fluid" alt="Second slide">
                         <div class="carousel-caption">
                             <div class="container carousel-content">
                                 <h6 class="text-secondary h4 animated fadeInUp">Best IT Solutions</h6>
@@ -139,7 +139,6 @@
             </div>
         </div>
         <!-- Carousel End -->
-
 
         <!-- Fact Start -->
         <div class="container-fluid bg-secondary py-5">
@@ -174,16 +173,15 @@
         </div>
         <!-- Fact End -->
 
-
         <!-- About Start -->
         <div class="container-fluid py-5 my-5">
             <div class="container pt-5">
                 <div class="row g-5">
                     <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                         <div class="h-100 position-relative">
-                            <img src="img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                            <img src="{{ url_for('static', filename='img/about-1.jpg') }}" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
                             <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                                <img src="img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
+                                <img src="{{ url_for('static', filename='img/about-2.jpg') }}" class="img-fluid w-100 rounded" alt="">
                             </div>
                         </div>
                     </div>
@@ -198,7 +196,6 @@
             </div>
         </div>
         <!-- About End -->
-
 
         <!-- Services Start -->
         <div class="container-fluid services py-5 mb-5">
@@ -249,7 +246,7 @@
                             <div class="p-4 text-center services-content">
                                 <div class="services-content-icon">
                                     <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Cecurity</h4>
+                                    <h4 class="mb-3">Web Security</h4>
                                     <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
                                     <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
                                 </div>
@@ -286,7 +283,6 @@
         </div>
         <!-- Services End -->
 
-
         <!-- Blog Start -->
         <div class="container-fluid blog py-5 mb-5">
             <div class="container">
@@ -297,7 +293,7 @@
                 <div class="row g-5 justify-content-center">
                     <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
                         <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <img src="{{ url_for('static', filename='img/blog-1.jpg') }}" class="img-fluid w-100 rounded-top" alt="">
                             <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
                             <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
                                 <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
@@ -315,7 +311,7 @@
                                 </div>
                             </div>
                             <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <img src="{{ url_for('static', filename='img/admin.jpg') }}" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
                                 <h5 class="">By Daniel Martin</h5>
                                 <span class="text-secondary">24 March 2023</span>
                                 <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
@@ -328,7 +324,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".5s">
                         <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <img src="{{ url_for('static', filename='img/blog-2.jpg') }}" class="img-fluid w-100 rounded-top" alt="">
                             <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Development</span>
                             <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
                                 <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
@@ -346,7 +342,7 @@
                                 </div>
                             </div>
                             <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <img src="{{ url_for('static', filename='img/admin.jpg') }}" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
                                 <h5 class="">By Daniel Martin</h5>
                                 <span class="text-secondary">23 April 2023</span>
                                 <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
@@ -359,7 +355,7 @@
                     </div>
                     <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".7s">
                         <div class="blog-item position-relative bg-light rounded">
-                            <img src="img/blog-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <img src="{{ url_for('static', filename='img/blog-3.jpg') }}" class="img-fluid w-100 rounded-top" alt="">
                             <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Mobile App</span>
                             <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
                                 <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
@@ -377,7 +373,7 @@
                                 </div>
                             </div>
                             <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-                                <img src="img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <img src="{{ url_for('static', filename='img/admin.jpg') }}" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
                                 <h5 class="">By Daniel Martin</h5>
                                 <span class="text-secondary">30 jan 2023</span>
                                 <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt libero sit amet</p>
@@ -392,7 +388,6 @@
             </div>
         </div>
         <!-- Blog End -->
-
 
         <!-- Contact Start -->
         <div class="container-fluid py-5 mb-5">
@@ -469,13 +464,12 @@
         </div>
         <!-- Contact End -->
 
-
         <!-- Footer Start -->
          <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
             <div class="container pt-5 pb-4">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
-                        <a href="index.html">
+                        <a href="{{ url_for('index') }}">
                             <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
                         </a>
                         <p class="mt-4 text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere delectus qui placeat inventore consectetur repellendus optio debitis.</p>
@@ -521,7 +515,7 @@
                         <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Your Site Name</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** The author’s attribution link must remain intact in the template. ***/-->
+                        <!--/*** The author's attribution link must remain intact in the template. ***/-->
                         <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
                         <span class="text-light">Designed By <a href="https://htmlcodex.com" class="text-secondary">HTML Codex</a></span>
                     </div>
@@ -530,20 +524,17 @@
         </div>
         <!-- Footer End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
 
-        
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
-
 </html>
